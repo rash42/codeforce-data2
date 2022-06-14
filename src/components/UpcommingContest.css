@@ -1,0 +1,14 @@
+.tableClass{
+    width: 80%;
+    margin: auto;
+    border: solid;
+    border-color: antiquewhite;
+    border-width: 1px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .tableClass {
+      width: 100%;
+    }
+  }
