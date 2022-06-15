@@ -1,0 +1,23 @@
+.user{
+    text-align: left;
+    margin: 2%;
+}
+
+
+
+  @media only screen and (max-width: 1400px) {
+    /* For mobile phones: */
+    .col-9{
+      width: 60%;
+    }
+    .col-3{
+        width: 40%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+    }
+  }

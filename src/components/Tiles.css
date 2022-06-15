@@ -1,0 +1,8 @@
+.len18 {
+    max-width: 18rem;
+    min-width: 12rem;
+    margin: 1rem;
+    border: solid;
+    border-color: aliceblue;
+    border-width: 1px;
+}
