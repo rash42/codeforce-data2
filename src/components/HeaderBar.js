@@ -270,11 +270,11 @@ function HeaderBar() {
             >
               <NightlightIcon />
             </ToggleButton>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+            {/* <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent='1' color="warning">
                 <ShoppingCartIcon />
               </Badge>
-            </IconButton>
+            </IconButton> */}
             <IconButton
               size="large"
               aria-label="show 17 new notifications"

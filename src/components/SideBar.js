@@ -9,6 +9,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { useSelector } from "react-redux";
+import HomeIcon from '@mui/icons-material/Home';
 
 
 
@@ -31,24 +32,11 @@ function SideBar() {
 
         >
             <List >
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                {['Home', 'Contests', 'User Info', 'Problem Set', 'Blogs'].map((text, index) => (
                     <ListItem key={text} disablePadding sx={{color: (theme) => theme.palette.custom.contrastText}}>
                         <ListItemButton>
                             <ListItemIcon>
                                 {index % 2 === 0 ? <InboxIcon sx={{color: (theme) => theme.palette.custom.contrastText}}/> : <MailIcon  sx={{color: (theme) => theme.palette.custom.contrastText}}/>}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
-
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem key={text} disablePadding sx={{color: (theme) => theme.palette.custom.contrastText}}>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon sx={{color: (theme) => theme.palette.custom.contrastText}}/> : <MailIcon sx={{color: (theme) => theme.palette.custom.contrastText}}/>}
                             </ListItemIcon>
                             <ListItemText primary={text} />
                         </ListItemButton>
