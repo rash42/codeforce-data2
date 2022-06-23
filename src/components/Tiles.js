@@ -29,7 +29,7 @@ function Tiles(props) {
                 transform: "translate3D(0,-1px,0) scale(1.04)",
             }
         }}
-            elevation={theme.mode == 'dark' ? 24 : 4}>
+            elevation={theme.mode === 'dark' ? 24 : 4}>
             <CardContent sx={{ height: 160 }}>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                 </Typography>
