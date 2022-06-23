@@ -8,13 +8,13 @@ const mode = createSlice({
     reducers: {
         toggleMode: (state) => {
             if(state.type === 'light'){
-                console.log('Entering dark mode')
+                // console.log('Entering dark mode')
                 return {
                     type: 'dark'
                 }
             }
             else{
-                console.log('Entering light mode')
+                // console.log('Entering light mode')
                 return {
                     type: 'light'
                 }

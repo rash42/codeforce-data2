@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import SideBar from './SideBar';
 import { styled } from '@mui/material/styles';
 
+
 const drawerWidth = 240;
 
 
@@ -66,16 +67,42 @@ export default function Main() {
         mode: 'dark',
         palette: {
             custom: {
-                main: '#666666',
-                light: '#b3b3b3',
-                dark: '#262626',
-                contrastText: '#ffffff'
+                // main: '#666666',
+                main: '#121212',
+                light: '#1F1B24',
+                // dark: '#262626',
+                dark: '#121212',
+                // contrastText: '#ffffff',
+                contrastText: '#bfbfbf'
             },
             mixins: {
                 toolbar: {
                     minHeight: 64
                 }
             },
+        },
+        components: {
+            MuiTableCell: {
+                styleOverrides: {
+                    root: {
+                        color: '#ffffff'
+                    }
+                }
+            },
+            MuiTablePagination: {
+                styleOverrides: {
+                    root: {
+                        color: '#ffffff'
+                    }
+                }
+            },
+            MuiSvgIcon: {
+                styleOverrides: {
+                    root: {
+                        fill: '#ffffff'
+                    }
+                }
+            }
         }
     })
     let theme
@@ -88,7 +115,7 @@ export default function Main() {
     return (
         <>
             <ThemeProvider theme={theme}>
-                <style>{`body {background-color: ${theme.palette.custom.main}`}</style>
+                <style>{`body {background-color: ${theme.palette.custom.dark}`}</style>
                 <header>
                     <HeaderBar></HeaderBar>
                 </header>

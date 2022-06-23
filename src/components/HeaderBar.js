@@ -280,7 +280,7 @@ function HeaderBar() {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge variant='dot' color='warning' overlap='circular'>
+              <Badge variant='dot' color='warning' overlap='circular' invisible={true}>
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -289,7 +289,7 @@ function HeaderBar() {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge variant='dot' color="warning" overlap='circular'>
+              <Badge variant='dot' color="warning" overlap='circular' invisible={true}>
                 <AppsIcon />
               </Badge>
             </IconButton>
