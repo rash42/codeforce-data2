@@ -6,10 +6,15 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+// import InboxIcon from '@mui/icons-material/MoveToInbox';
+// import MailIcon from '@mui/icons-material/Mail';
 import { useSelector } from "react-redux";
-// import HomeIcon from '@mui/icons-material/Home';
+import HomeIcon from '@mui/icons-material/Home';
+import QuizIcon from '@mui/icons-material/Quiz';
+import PersonIcon from '@mui/icons-material/Person';
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import BookIcon from '@mui/icons-material/Book';
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -17,28 +22,56 @@ import { useSelector } from "react-redux";
 
 function SideBar() {
     const isDrawerOpen = useSelector((state) => state.drawer.isOpen)
+    const navigate = useNavigate()
 
+    const info = [{
+        text: 'Home',
+        icon: <HomeIcon sx={{ color: (theme) => theme.palette.custom.contrastText }} />,
+        link: '/'
+    },
+    {
+        text: 'Contests',
+        icon: <QuizIcon sx={{ color: (theme) => theme.palette.custom.contrastText }} />,
+        link: '/contests'
+    },
+    {
+        text: 'User Info',
+        icon: <PersonIcon sx={{ color: (theme) => theme.palette.custom.contrastText }} />,
+        link: '/user'
+    },
+    {
+        text: 'Problem Set',
+        icon: <AssignmentIcon sx={{ color: (theme) => theme.palette.custom.contrastText }} />,
+        link: '/problems'
+    },
+    {
+        text: 'Blogs',
+        icon: <BookIcon sx={{ color: (theme) => theme.palette.custom.contrastText }} />,
+        link: '/blogs'
+    }]
 
     const list = (anchor) => (
         <Box
-            sx={{ width: {
-                xs: 600,
-                sm: 250,
-            }, marginTop: 10 }}
+            sx={{
+                width: {
+                    xs: 600,
+                    sm: 250,
+                }, marginTop: 10
+            }}
             role="presentation"
-            // onClick={toggleDrawer(anchor, false)}
-            // onKeyDown={toggleDrawer(anchor, false)}
-            //color={'secondary'}
+        // onClick={toggleDrawer(anchor, false)}
+        // onKeyDown={toggleDrawer(anchor, false)}
+        //color={'secondary'}
 
         >
             <List >
-                {['Home', 'Contests', 'User Info', 'Problem Set', 'Blogs'].map((text, index) => (
-                    <ListItem key={text} disablePadding sx={{color: (theme) => theme.palette.custom.contrastText}}>
-                        <ListItemButton>
+                {info.map((element, index) => (
+                    <ListItem key={element.text} disablePadding sx={{ color: (theme) => theme.palette.custom.contrastText }}>
+                        <ListItemButton onClick={() => navigate(element.link)}>
                             <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon sx={{color: (theme) => theme.palette.custom.contrastText}}/> : <MailIcon  sx={{color: (theme) => theme.palette.custom.contrastText}}/>}
+                                {element.icon}
                             </ListItemIcon>
-                            <ListItemText primary={text} />
+                            <ListItemText primary={element.text} />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -63,13 +96,13 @@ function SideBar() {
                         borderWidth: 0,
                         background: theme.palette.custom.main,
                     },
-                    
-                 })}
-              >
-            {list('left')}
-        </Drawer>
-            </React.Fragment >
-      )
+
+                })}
+            >
+                {list('left')}
+            </Drawer>
+        </React.Fragment >
+    )
 }
 
 export default SideBar
